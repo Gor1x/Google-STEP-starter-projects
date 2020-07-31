@@ -13,16 +13,22 @@
 // limitations under the License.
 
 /**
- * Adds a random greeting to the page.
+ * Adds a random fact about me to the page.
  */
-function addRandomGreeting() {
-  const greetings =
-      ['Hello world!', '¡Hola Mundo!', '你好，世界！', 'Bonjour le monde!'];
+function addRandomFactAboutMe() {
+  const facts = [
+      'Now I am STEP intern in Google', 
+      'I live in Chelyabinsk. It is a big city in Russia', 
+      'I speak Russian(Да!)', 
+      'I study for my bachelor degree in SPbSU',
+      'I love programming',
+      'Обычная русская фраза?! Это что, шутка какая-то?'
+      ];
 
-  // Pick a random greeting.
-  const greeting = greetings[Math.floor(Math.random() * greetings.length)];
+  // Pick a random fact.
+  const fact = facts[Math.floor(Math.random() * facts.length)];
 
   // Add it to the page.
-  const greetingContainer = document.getElementById('greeting-container');
-  greetingContainer.innerText = greeting;
+  const factContainer = document.getElementById('fact-container');
+  factContainer.innerText = fact;
 }
