@@ -1,7 +1,6 @@
 body {
-    background-color: rgb(219, 241, 255);
-    font: 16px Montserrat, sans-serif;
-    line-height: 1.8;
+    background-color: rgb(217, 232, 241);
+    font: 16px Montserrat;
 }
 
 img {
@@ -12,7 +11,7 @@ img {
 #content {
   margin-left: auto;
   margin-right: auto;
-  width: 650px;
+  width: 700px;
 }
 
 #greeting-container {
