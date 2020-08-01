@@ -1,5 +1,12 @@
 body {
     background-color: rgb(219, 241, 255);
+    font: 16px Montserrat, sans-serif;
+    line-height: 1.8;
+}
+
+img {
+    height: 30px;
+    margin: 5px;
 }
 
 #content {
