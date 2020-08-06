@@ -33,8 +33,18 @@ function addRandomFactAboutMe() {
   factContainer.innerText = fact;
 }
 
-function getHello() {
-  fetch('/data').then(response => response.text()).then((quote) => {
-    document.getElementById('hello-container').innerText = quote;
+function getComments() {
+  fetch('/data').then(response => response.json()).then((commentsArray) => {
+    let container = document.getElementById('comments-container');
+    container.innerText = '';
+    for (const comment of commentsArray) {
+        container.appendChild(createListElement(comment));
+    }
   });
+}
+
+function createListElement(comment) {
+    const liElement = document.createElement("li");
+    liElement.innerText = comment;
+    return liElement;
 }
