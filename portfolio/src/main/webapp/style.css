@@ -1,11 +1,16 @@
 body {
     background-color: rgb(246, 248, 255);
     font: 16px Montserrat;
+    vertical-align: center;
 }
 
-img {
-    height: 20px;
-    margin: 5px;
+.icontext_list {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.left_icon {
+    height: 17px;
 }
 
 #content {
