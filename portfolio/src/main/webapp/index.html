@@ -7,7 +7,7 @@
     <script src="script.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
   </head>
-  <body>
+  <body onload="getComments()">
     <div id="content">
       <img style="float: right; margin: 10px; height: 300px" src="images/my_photo.jpg">
       <h2>Egor Postnikov</h1>
@@ -47,13 +47,12 @@
       </ul>
 
       <hr>
-      <p>Click here to get comments about me:</p>
-      <button onclick="getComments()">Click me please</button>
+      <p>There are some comments about me:</p>
       <ul id="comments-container"></ul>
 
       <hr> 
       <form action="/data" method="POST">
-        <p>Leave comment about me</p>
+        <p>You can leave more one!</p>
         <input type="text" name="comment-field">
         <br/><br/>
         <input type="submit">
