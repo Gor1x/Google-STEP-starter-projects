@@ -43,4 +43,11 @@ public class DataServlet extends HttpServlet {
     Gson gson = new Gson();
     response.getWriter().println(gson.toJson(messages));
   }
+
+  @Override
+  public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
+    
+
+      request.sendRedirect("/index.html");
+  }
 }
