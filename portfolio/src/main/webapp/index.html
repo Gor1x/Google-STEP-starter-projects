@@ -2,17 +2,70 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <title>My Portfolio</title>
+    <title>Egor Postnikov</title>
     <link rel="stylesheet" href="style.css">
     <script src="script.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
   </head>
-  <body>
+  <body onload="getComments()">
     <div id="content">
-      <h1>My Portfolio</h1>
-      <p>This is my portfolio.</p>
-      <p>Click here to get a random message:</p>
-      <button onclick="addRandomGreeting()">Hello</button>
-      <div id="greeting-container"></div>
+      <img style="float: right; margin: 10px; height: 300px" src="images/my_photo.jpg">
+      <h2>Egor Postnikov</h2>
+      <p>ea-post134@yandex.ru</p>
+      
+      <ul class="icontext_list">
+        <li>
+          <span><img class="left_icon" src="images/vk_logo.png"></span>
+          <span><a href="https://vk.com/destructing_edge">VK</a></span>
+        </li>
+        <li>
+          <span><img class="left_icon" src="images/tg_logo.png"></span>
+          <span><a href="https://t.me/Gor1x">Telegram</a></span>
+        </li>
+        <li>
+          <span><img class="left_icon" src="images/github_logo.png"></span>
+          <span><a href="https://github.com/Gor1x">GitHub</a></span>
+        </li>
+      </ul>
+
+      <hr>
+      <h2>Education</h2>
+      <h3>Saint Petersburg State University</h3>
+      <div>
+          <span><img class="left_icon" src="images/mkn_logo.png"></span>
+          <span>Faculty of Math and Computer science. Modern programming.</span>
+      </div>
+      <p>Gradutation date: <b>July of 2023</b></p>
+
+      <hr>
+      <h2>Work Experience</h2>
+      <h3>Software Engineering</h3>
+      <ul>
+        <li>
+          Google STEP Intern <br>
+          July 2020 - present
+        </li>
+      </ul>
+      <h3>Teaching</h3>
+      <ul>
+        <li>
+          Summer Informatics Camp <br>
+          August 2019
+        </li>
+        <li>
+          Algorithms and data structures tutor
+        </li>
+      </ul>
+
+      <hr>
+      <p>There are some comments about me:</p>
+      <ul id="comments-container"></ul>
+
+      <form action="/data" method="POST">
+        <p>And You can leave more one!</p>
+        <span><input type="text" name="comment-field"></span>
+        <span><input type="submit"></span>
+      </form>
     </div>
   </body>
 </html>

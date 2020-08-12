@@ -1,7 +1,22 @@
+body {
+    background-color: rgb(246, 248, 255);
+    font: 16px Montserrat;
+    vertical-align: center;
+}
+
+.icontext_list {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.left_icon {
+    height: 17px;
+}
+
 #content {
   margin-left: auto;
   margin-right: auto;
-  width: 650px;
+  width: 700px;
 }
 
 #greeting-container {
