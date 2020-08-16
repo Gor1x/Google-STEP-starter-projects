@@ -2,11 +2,24 @@ body {
     background-color: rgb(246, 248, 255);
     font: 16px Montserrat;
     vertical-align: center;
+    height: 100%;
 }
 
 .icontext_list {
   list-style-type: none;
   padding-left: 0;
+}
+
+#autorization_view {
+  float: right;
+  margin: 20px;
+  padding: 20px;
+  background-color: rgb(98, 132, 255);
+}
+
+#map {
+    height: 500px;
+    width: 100%;
 }
 
 .left_icon {

@@ -22,6 +22,29 @@ function getComments() {
   });
 }
 
+function initMap() {
+  console.log("map created");
+  const prefPlace = { lat: 55.17477877, lng: 61.29954625 };
+  const map = new google.maps.Map(document.getElementById("map"), {
+    center: prefPlace,
+    zoom: 12,
+    mapTypeId: 'hybrid'
+  });
+  marker = new google.maps.Marker({position: prefPlace, map: map});
+}
+
+function loadAutorizationView() {
+  fetch('/autorization').then(response => response.text()).then(data => {
+    view = document.getElementById('autorization_view')
+    view.insertAdjacentHTML("afterbegin", data);
+  });
+}
+
+function doPreparation() {
+  getComments();
+  loadAutorizationView();
+}
+
 function createListElement(comment) {
     const liElement = document.createElement("li");
     liElement.innerText = comment;
