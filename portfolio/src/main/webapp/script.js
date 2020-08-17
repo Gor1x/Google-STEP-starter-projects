@@ -16,14 +16,58 @@ function getComments() {
   fetch('/data').then(response => response.json()).then((commentsArray) => {
     let container = document.getElementById('comments-container');
     container.innerText = '';
+    console.log(commentsArray);
     for (const comment of commentsArray) {
-        container.appendChild(createListElement(comment));
+        container.append(createCommentView(comment));
     }
   });
 }
 
+function initMap() {
+  const prefPlace = { lat: 55.17477877, lng: 61.29954625 };
+  const map = new google.maps.Map(document.getElementById("map"), {
+    center: prefPlace,
+    zoom: 12,
+    mapTypeId: 'hybrid'
+  });
+  marker = new google.maps.Marker({position: prefPlace, map: map});
+}
+
+function loadAutorizationView() {
+  fetch('/autorization').then(response => response.text()).then(data => {
+    view = document.getElementById('autorization_view')
+    view.insertAdjacentHTML("afterbegin", data);
+  });
+}
+
+function processCommentViewStatus() {
+  fetch('/login_status').then(response => response.text()).then(status => {
+    commentView = document.getElementById('comment-form')
+    console.log("CommentView is: " + commentView)
+    if (status === "true") {
+      commentView.style.display = "block";
+    } else {
+      commentView.style.display = "none";
+    }
+  });
+}
+
+function doPreparation() {
+  processCommentViewStatus();
+  getComments();
+  loadAutorizationView();
+}
+
+function createCommentView(comment) {
+  div = document.createElement("div");
+  div.className = "comment-view";
+  div.innerHTML = "<p class = \"email\"> " + comment.userEmail + "</p>\
+          <p class = \"comment-message\">" +  comment.message + "</p>";
+  return div;
+}
+
 function createListElement(comment) {
     const liElement = document.createElement("li");
-    liElement.innerText = comment;
+    liElement.innerText = comment.userEmail + " | " + comment.message;
     return liElement;
 }
