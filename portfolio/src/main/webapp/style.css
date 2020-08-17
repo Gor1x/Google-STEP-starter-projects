@@ -1,5 +1,5 @@
 body {
-    background-color: rgb(246, 248, 255);
+    background-color: #ebf0f7;
     font: 16px Montserrat;
     vertical-align: center;
     height: 100%;
@@ -14,7 +14,7 @@ body {
   float: right;
   margin: 20px;
   padding: 20px;
-  background-color: rgb(98, 132, 255);
+  background-color: #475069;
 }
 
 #map {
@@ -34,4 +34,22 @@ body {
 
 #greeting-container {
   margin-top: 20px;
+}
+
+.comment-view {
+    background-color: #8e9fbb;
+    margin: 10px;
+    padding: 10px;
+}
+
+.email {
+    font-weight: bold;
+    font-size: 11px;
+    margin: 4px;
+    float: right;
+}
+
+.comment-message {
+    font-size: 16px;
+    margin: 0;
 }

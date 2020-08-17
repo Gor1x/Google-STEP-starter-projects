@@ -31,10 +31,10 @@ public class AutorizationServlet extends HttpServlet {
     if (userService.isUserLoggedIn()) {
       out.println("<p>Hello " + userService.getCurrentUser().getEmail() + "!</p>");
       String logoutUrl = userService.createLogoutURL("/");
-      out.println("<p>Logout <a href=\"" + logoutUrl + "\">here</a>.</p>");
+      out.println("<p class=\"login-text\">Logout <a href=\"" + logoutUrl + "\">here</a>.</p>");
     } else {
       String loginUrl = userService.createLoginURL("/");
-      out.println("<p>Login <a href=\"" + loginUrl + "\">here</a>.</p>");
+      out.println("<p class=\"login-text\"><br>Login <a href=\"" + loginUrl + "\">here</a>.</br></p>");
     }
   }
 
