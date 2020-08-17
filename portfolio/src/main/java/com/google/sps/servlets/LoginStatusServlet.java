@@ -19,23 +19,13 @@ import java.io.IOException;
 import java.io.PrintWriter;
 
 /** Servlet that returns some example content. TODO: modify this file to handle comments data */
-@WebServlet("/autorization")
-public class AutorizationServlet extends HttpServlet {
+@WebServlet("/login_status")
+public class LoginStatusServlet extends HttpServlet {
 
   @Override
   public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
-    response.setContentType("text/html;");
     PrintWriter out = response.getWriter();
-    // Only logged-in users can see the form
     UserService userService = UserServiceFactory.getUserService();
-    if (userService.isUserLoggedIn()) {
-      out.println("<p>Hello " + userService.getCurrentUser().getEmail() + "!</p>");
-      String logoutUrl = userService.createLogoutURL("/");
-      out.println("<p>Logout <a href=\"" + logoutUrl + "\">here</a>.</p>");
-    } else {
-      String loginUrl = userService.createLoginURL("/");
-      out.println("<p>Login <a href=\"" + loginUrl + "\">here</a>.</p>");
-    }
+    response.getWriter().print(String.valueOf(userService.isUserLoggedIn()));
   }
-
 }

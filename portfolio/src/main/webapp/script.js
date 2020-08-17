@@ -40,7 +40,20 @@ function loadAutorizationView() {
   });
 }
 
+function processCommentViewStatus() {
+  fetch('/login_status').then(response => response.text()).then(status => {
+    commentView = document.getElementById('comment-view')
+    console.log("CommentView is: " + commentView)
+    if (status === "true") {
+      commentView.style.display = "block";
+    } else {
+      commentView.style.display = "none";
+    }
+  });
+}
+
 function doPreparation() {
+  processCommentViewStatus();
   getComments();
   loadAutorizationView();
 }
