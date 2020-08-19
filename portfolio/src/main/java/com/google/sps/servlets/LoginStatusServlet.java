@@ -18,7 +18,6 @@ import com.google.appengine.api.users.UserServiceFactory;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-/** Servlet that returns some example content. TODO: modify this file to handle comments data */
 @WebServlet("/login_status")
 public class LoginStatusServlet extends HttpServlet {
 
