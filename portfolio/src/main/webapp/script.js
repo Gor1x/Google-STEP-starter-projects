@@ -24,7 +24,7 @@ function getComments() {
 }
 
 function initMap() {
-  const prefPlace = { lat: 55.17477877, lng: 61.29954625 };
+  const prefPlace = { lat: 56, lng: 63 };
   const map = new google.maps.Map(document.getElementById("map"), {
     center: prefPlace,
     zoom: 12,
