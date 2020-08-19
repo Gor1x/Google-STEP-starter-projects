@@ -33,9 +33,9 @@ function initMap() {
   marker = new google.maps.Marker({position: prefPlace, map: map});
 }
 
-function loadAutorizationView() {
-  fetch('/autorization').then(response => response.text()).then(data => {
-    view = document.getElementById('autorization_view')
+function loadAuthorizationView() {
+  fetch('/authorization').then(response => response.text()).then(data => {
+    view = document.getElementById('authorization_view')
     view.insertAdjacentHTML("afterbegin", data);
   });
 }
@@ -55,7 +55,7 @@ function processCommentViewStatus() {
 function doPreparation() {
   processCommentViewStatus();
   getComments();
-  loadAutorizationView();
+  loadAuthorizationView();
 }
 
 function createCommentView(comment) {

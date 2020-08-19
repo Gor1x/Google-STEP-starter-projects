@@ -18,8 +18,8 @@ import com.google.appengine.api.users.UserServiceFactory;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-@WebServlet("/autorization")
-public class AutorizationServlet extends HttpServlet {
+@WebServlet("/authorization")
+public class AuthorizationServlet extends HttpServlet {
 
   @Override
   public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
