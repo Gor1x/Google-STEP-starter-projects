@@ -24,7 +24,7 @@ function getComments() {
 }
 
 function initMap() {
-  const prefPlace = { lat: 55.17477877, lng: 61.29954625 };
+  const prefPlace = { lat: 56, lng: 63 };
   const map = new google.maps.Map(document.getElementById("map"), {
     center: prefPlace,
     zoom: 12,
@@ -33,9 +33,9 @@ function initMap() {
   marker = new google.maps.Marker({position: prefPlace, map: map});
 }
 
-function loadAutorizationView() {
-  fetch('/autorization').then(response => response.text()).then(data => {
-    view = document.getElementById('autorization_view')
+function loadAuthorizationView() {
+  fetch('/authorization').then(response => response.text()).then(data => {
+    view = document.getElementById('authorization_view')
     view.insertAdjacentHTML("afterbegin", data);
   });
 }
@@ -55,7 +55,7 @@ function processCommentViewStatus() {
 function doPreparation() {
   processCommentViewStatus();
   getComments();
-  loadAutorizationView();
+  loadAuthorizationView();
 }
 
 function createCommentView(comment) {
